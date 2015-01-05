@@ -29,8 +29,8 @@
   
   <repositories>
       <repository>
-          <id>bukkit-repo</id>
-          <url>http://repo.bukkit.org/content/groups/public/</url>
+          <id>spigot-repo</id>
+          <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
       </repository>
       <repository>
           <id>sk89q-repo</id>
@@ -47,14 +47,13 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.7.9-R0.2</version>
-            <type>jar</type>
+            <version>1.8-R0.1-SNAPSHOT</version>
         </dependency>
         <!-- WorldGuard Dependency -->
         <dependency>
             <groupId>com.sk89q</groupId>
             <artifactId>worldguard</artifactId>
-            <version>5.8-SNAPSHOT</version>
+            <version>LATEST</version>
             <type>jar</type>
             <scope>compile</scope>
             <exclusions>
@@ -97,7 +96,7 @@
         <repository>
             <id>local.repo</id>
             <name>Mewin Repository</name>
-            <url>file:///var/www/maven</url>
+            <url>file://mavenrepo</url>
         </repository>
     </distributionManagement>
 </project>

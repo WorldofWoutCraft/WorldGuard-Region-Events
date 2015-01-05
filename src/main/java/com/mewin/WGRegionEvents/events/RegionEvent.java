@@ -7,6 +7,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
@@ -29,6 +30,7 @@ public abstract class RegionEvent extends PlayerEvent {
         this.region = region;
         this.movement = movement;
         this.parentEvent = parent;
+        System.out.println(this.getClass() + " - EVENT FIRED!");
     }
 
     @Override

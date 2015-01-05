@@ -92,11 +92,5 @@
             </exclusions>
         </dependency>
     </dependencies>
-    <distributionManagement>
-        <repository>
-            <id>local.repo</id>
-            <name>Mewin Repository</name>
-            <url>file:///var/www/maven</url>
-        </repository>
-    </distributionManagement>
+
 </project>

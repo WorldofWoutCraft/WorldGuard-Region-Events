@@ -30,7 +30,6 @@ public abstract class RegionEvent extends PlayerEvent {
         this.region = region;
         this.movement = movement;
         this.parentEvent = parent;
-        System.out.println(this.getClass() + " - EVENT FIRED!");
     }
 
     @Override

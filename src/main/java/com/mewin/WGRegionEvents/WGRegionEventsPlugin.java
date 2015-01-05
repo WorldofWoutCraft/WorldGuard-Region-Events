@@ -5,38 +5,31 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- *
  * @author mewin
  */
 public class WGRegionEventsPlugin extends JavaPlugin {
-    private WGRegionEventsListener listener;
-    private WorldGuardPlugin wgPlugin;
-    
+
     @Override
-    public void onEnable()
-    {
-        wgPlugin = getWGPlugin();
-        if (wgPlugin == null)
-        {
+    public void onEnable() {
+        WorldGuardPlugin wgPlugin = getWGPlugin();
+        if (wgPlugin == null) {
             getLogger().warning("Could not find World Guard, disabling.");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        
-        listener = new WGRegionEventsListener(this, wgPlugin);
-        
+
+        WGRegionEventsListener listener = new WGRegionEventsListener(this, wgPlugin);
+
         getServer().getPluginManager().registerEvents(listener, wgPlugin);
     }
-    
-    private WorldGuardPlugin getWGPlugin()
-    {
+
+    private WorldGuardPlugin getWGPlugin() {
         Plugin plugin = getServer().getPluginManager().getPlugin("WorldGuard");
-        
-        if (plugin == null || !(plugin instanceof WorldGuardPlugin))
-        {
+
+        if (plugin == null || !(plugin instanceof WorldGuardPlugin)) {
             return null;
         }
-        
+
         return (WorldGuardPlugin) plugin;
     }
 }

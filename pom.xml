@@ -3,26 +3,26 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mewin</groupId>
-  <artifactId>WGRegionEvents</artifactId>
-  <version>1.3</version>
+  <artifactId>wgregionevents</artifactId>
+  <version>1.3.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>WGRegionEvents</name>
-  <url>http://maven.apache.org</url>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
+  <build>
+    <finalName>${project.name}-${project.version}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -36,10 +36,6 @@
           <id>sk89q-repo</id>
           <url>http://maven.sk89q.com/repo/</url>
       </repository>
-      <repository>
-          <id>mewin-repo</id>
-          <url>http://maven.mewin.de</url>
-      </repository>
   </repositories>
   
     <dependencies>
@@ -47,15 +43,15 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.8-R0.1-SNAPSHOT</version>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <!-- WorldGuard Dependency -->
         <dependency>
             <groupId>com.sk89q</groupId>
             <artifactId>worldguard</artifactId>
-            <version>LATEST</version>
-            <type>jar</type>
-            <scope>compile</scope>
+            <version>6.1.1-SNAPSHOT</version>
+            <scope>provided</scope>
             <exclusions>
                 <exclusion>
                     <artifactId>truezip</artifactId>
@@ -92,5 +88,4 @@
             </exclusions>
         </dependency>
     </dependencies>
-
 </project>
